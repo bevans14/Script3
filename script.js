@@ -1,10 +1,10 @@
 
-var daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-var exercisesForWeek = ["Rest Day", "Running", "Jogging", "Tennis", "Swimming", "Core Strength", "Hiking"];
+console.log("!!!!FIRST CHALLENGE FIRST CHALLENGE!!!!")
+
+
+
+
 // Look into maybe using an object for this instead of two arrays?
-
-var exerciseOfWeek = weeklyExcercise();
-
 
 // const exercisePlan = {
 //   daysOfWeek: {
@@ -20,29 +20,64 @@ var exerciseOfWeek = weeklyExcercise();
 
 // ok that was too hard ^
 
-  for (let i = 0; i < daysOfWeek.length; i++) { 
+// could have done an if else but want to practice functions / objects more
 
-  exerciseOfWeek.setExercise(daysOfWeek[i], exercisesForWeek[i]);
+var daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+var exercisesForWeek = ["Rest Day", "Running", "Jogging", "Tennis", "Swimming", "Core Strength", "Hiking"];
 
-  }
+
   function weeklyExcercise() {
-
-    return {
+//dont forget to return
+// this function holds an object, and i need to target specific data within the object to display in the console
+    return {                        
       setExercise: function(daysOfWeek, exercisesForWeek) {
-        if (daysOfWeek.includes(daysOfWeek)) {
-          console.log(`Exercise for ${daysOfWeek}: ${exercisesForWeek}`); 
+       {
+          console.log(` ${daysOfWeek}: ${exercisesForWeek}`);
+          
         } 
       },
+      todaysExercise: function(){
+        var today = new Date().getDate();
+        const dayOfWeek = daysOfWeek[today]; // Map it to the day's name
+        const exercise = exercisesForWeek[today]; // Get the exercise for the current day
+        console.log(`today is ${dayOfWeek} so today's exercise is ${exercise}`)
+      
+      }
   
+      
+    };
   
+  }
+    var exerciseOfWeek = weeklyExcercise(); // nesting data
+    exerciseOfWeek.todaysExercise(); // call the function to perform
+
+  
+
+
+    for (let i = 0; i < daysOfWeek.length; i++) { // goes through the array
+
+      exerciseOfWeek.setExercise(daysOfWeek[i], exercisesForWeek[i]);  
     
-    };}
+    }
+  
 
+      // need to make it console log the excercise that is today
+      // var today = Date.getDay
+      // var today = new Date();
+      // console.log(today)
+      // var today = daysOfWeek[today.getDay()]; //getday is a built in method
+      // console.log(`today is ${today} so todays excerise will be ${excerise}`)
 
-
-
-
-//   second GI //
+      // function todaysExcercise() {
+      // var today = new Date().getDay();
+      // console.log(today)
+      // var dayOfWeek = daysOfWeek[today]; // Map it to the day name
+      // this.setExercise(dayOfWeek, exercisesForWeek);
+       // return
+       //this doesn't work because it needs to be inside of the function since that is where all the data is, and also i need to define everything 
+ 
+     
+     console.log("!!!!SECOND CHALLENGE SECOND CHALLENGE!!!!")
 
 function calculatePizzaSlices(slices, numPeople) {
   
@@ -56,12 +91,13 @@ function calculatePizzaSlices(slices, numPeople) {
   
   var answer = calculatePizzaSlices(slices, numberOfPeople);
   console.log(answer);
-
+ 
+  //ez pz
 
   // Third GI //
+  console.log("!!!!THIRD CHALLENGE THIRD CHALLENGE!!!!")
 
-
-  function createPII(name, ssn) {
+  function createPII() {
     var PII = {
       name: "Nikki",
       ssn: 123456789,  // this function stores an object, the object stores data inside of it
@@ -77,13 +113,13 @@ function calculatePizzaSlices(slices, numPeople) {
       }};
     }
   
-  var piiInfo = createPII("name", ""); // need to look into this more
-  
+  var piiInfo = createPII(); 
   
 var info = piiInfo.getName(); // calls piiInfo which holds my data in createPII, then calls the getName method
-  console.log(`Name: ${name}`);
   
-  console.log(`SSN: ${piiInfo.ssn}`); 
+console.log(`Name: ${name}`);
+  
+console.log(`SSN: ${piiInfo.ssn}`);  // the SSN is not part of the object that is being returned, so it is undefined
 
 
 
@@ -96,7 +132,7 @@ var info = piiInfo.getName(); // calls piiInfo which holds my data in createPII,
 
   const personinfo = {
     name: "Wendy",
-    job: "programmer",
+    job: "programmer", // okkk kinda getting there with understanding objects yaas slay
     age: 27,
     busy: true, 
   
@@ -105,20 +141,19 @@ var info = piiInfo.getName(); // calls piiInfo which holds my data in createPII,
     },
   
     fetchJob: function() {
-      console.log(`${this.name} is a ${this.job}`);
+      console.log(`${this.name} is a ${this.job}`); // "this" grabs whatever value comes after it
     },
   
     newTask: function() {
       if (this.busy) {
-        console.log(`${this.name} is busy`);
+        console.log(`${this.name} is busy`); // just grabbing the info i need using this and console logging it
       } else {
         console.log(`${this.name} is not busy`);
       }
-    },
+    }, // busy was set to true so this function will always console log ""Wendy" (because this.name) is busy"
   };
-
   const programmingLanguages = ["JavaScript", "Java"]
 
 
-  programmingLanguages.push("C#", "CSS");
+  programmingLanguages.push("C#", "CSS"); // push method adds to the array :,(
   
